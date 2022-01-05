@@ -54,9 +54,10 @@ Entre outras.
 
 ## Para startar o projecto
 
-Primeiro inicie o servidor
+Primeiro inicie o servidor, ter instalado o composer
 
 ```bash
+composer update
 php bin/server.php
 ```
 
