@@ -79,7 +79,7 @@ main .content .text {
   flex-direction: column;
   justify-content: center;
 
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
 main .content .text img {
@@ -88,7 +88,7 @@ main .content .text img {
 
   position: absolute;
 
-  right: 72px;
+  right: 92px;
   bottom: 0;
 }
 
@@ -136,13 +136,17 @@ main .signIn .form {
   max-width: 370px;
 }
 
+main .signIn .form div {
+  width: 370px;
+}
+
 main .signIn .form h3 {
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
   line-height: 45px;
 
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 main .signIn .form input {
@@ -173,8 +177,13 @@ main .signIn .form input:focus {
   outline: 1px solid var(--primary-color);
 }
 
-main .signIn .form input + input {
+main .signIn .form .pass {
   margin-top: 20px;
+}
+
+.pass {
+  display: flex;
+  flex-direction: column;
 }
 
 main .signIn .form button {
@@ -202,4 +211,41 @@ main .signIn .form button {
 
 main .signIn .form button:hover {
   filter: brightness(0.8);
+}
+
+#email-error,
+#pass-error,
+#global-error {
+  font-size: 11px;
+  color: #eb4335;
+
+  padding: 4px 0;
+}
+
+.msg {
+  margin-bottom: 6px;
+}
+
+.msg #global-error {
+  margin-left: 4px;
+}
+
+.visibility {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 16px;
+  margin-left: 4px;
+}
+
+.visibility span {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+#visibility {
+  width: 16px;
+  height: 16px;
+
+  outline: none;
 }

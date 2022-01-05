@@ -29,18 +29,37 @@
           <img src="./assets/images/avatar.png" alt="avatar">
         </div>
         <div class="signIn">
-          <form action="#" method="post" class="form">
+          <form action="./core/classes/signin.php" method="post" class="form" name="form" onsubmit="return validateForm()">
+
             <h3>Sign In</h3>
 
-            <input type="text" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
+            <div class="msg">
+              <span id="global-error"></span>
+            </div>
 
-            <button>Login</button>
+            <div class="email">
+              <input type=" text" id="email" name="email" placeholder="Email">
+              <span id="email-error"></span>
+            </div>
+
+            <div class="pass">
+              <input type="password" id="pass" name="password" placeholder="Password" max="30">
+              <span id="pass-error"></span>
+
+              <label for="visibility" class="visibility">
+                <input type="checkbox" id="visibility">
+                <span>Mostrar password</span>
+              </label>
+            </div>
+
+            <button type="submit">Login</button>
           </form>
         </div>
       </section>
     </div>
   </main>
+
+  <script src="./assets/js/validator.js"></script>
 </body>
 
 </html>
