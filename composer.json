@@ -4,7 +4,7 @@
       "VChat\\": "core/"
     },
     "files": [
-      "env.php"
+      "config.php"
     ]
   },
   "require": {

@@ -4,7 +4,7 @@ require_once "./core/bootstrap.php";
 
 use VChat\validators\Middleware;
 
-$_ = (!Middleware::isAuthenticated()) ? header("Location: " . BASE_URL . "/index.php") : 'IsAuth';
+$_ = (!Middleware::isAuthenticated()) ? redirect("/index.php") : 'IsAuth';
 
 
 

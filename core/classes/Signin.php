@@ -27,10 +27,10 @@ if ($response) {
       "name" => $response[0]["name"]
     ];
 
-    header("Location: " . BASE_URL . "/home.php");
+    redirect("/home.php");
   } else {
-    header("Location: " . BASE_URL . "/index.php?status=401");
+    redirect("/index.php?status=401");
   }
 } else {
-  header("Location: " . BASE_URL . "/index.php?status=401");
+  redirect("/index.php?status=401");
 }
