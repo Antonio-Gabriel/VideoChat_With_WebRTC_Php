@@ -8,6 +8,8 @@ Uma aplicação minimalista para realizar os testes de um live chat usando como 
 - Javascript
 - Html5
 - Css3
+- WebSockets
+- Mysql
   
 E como ferramenta de trabalho ou biblioteca estarei usando o `WebRTC` (Web Real-Time-Communication).
 
