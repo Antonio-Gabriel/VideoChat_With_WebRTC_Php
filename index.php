@@ -1,3 +1,12 @@
+<?php
+
+require_once "./core/bootstrap.php";
+
+use VChat\validators\Middleware;
+
+$_ = (Middleware::isAuthenticated()) ? header("Location: " . BASE_URL . "/home.php") : 'NotIsAuth';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-pt">
 
@@ -29,11 +38,19 @@
           <img src="./assets/images/avatar.png" alt="avatar">
         </div>
         <div class="signIn">
-          <form action="./core/classes/signin.php" method="post" class="form" name="form" onsubmit="return validateForm()">
+          <form action="./core/classes/Signin.php" method="post" class="form" name="form" onsubmit="return validateForm()">
 
             <h3>Sign In</h3>
 
             <div class="msg">
+              <?php
+              $status = (int)$_GET["status"];
+
+              if ($status == 401) {
+
+                echo '<span id="global-error">Acesso Negado!, tente novamente</span>';
+              }
+              ?>
               <span id="global-error"></span>
             </div>
 

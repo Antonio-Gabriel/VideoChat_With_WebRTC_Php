@@ -2,7 +2,10 @@
   "autoload": {
     "psr-4": {
       "VChat\\": "core/"
-    }
+    },
+    "files": [
+      "env.php"
+    ]
   },
   "require": {
     "cboden/ratchet": "^0.4.3"
