@@ -27,10 +27,10 @@ if ($response) {
       "name" => $response[0]["name"]
     ];
 
-    redirect("/home.php");
+    redirect("home.php");
   } else {
-    redirect("/index.php?status=401");
+    redirect("index.php?status=401");
   }
 } else {
-  redirect("/index.php?status=401");
+  redirect("index.php?status=401");
 }

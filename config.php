@@ -1,6 +1,6 @@
 <?php
 
-define("BASE_URL", "http://localhost/vchat");
+define("BASE_URL", "http://localhost/vchat/");
 
 function redirect(string $location)
 {

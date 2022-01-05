@@ -9,4 +9,4 @@ session_unset();
 
 session_regenerate_id();
 
-redirect("/index.php");
+redirect("index.php");

@@ -4,7 +4,7 @@ require_once "./core/bootstrap.php";
 
 use VChat\validators\Middleware;
 
-$_ = (Middleware::isAuthenticated()) ? redirect("/home.php") : 'NotIsAuth';
+$_ = (Middleware::isAuthenticated()) ? redirect("home.php") : 'NotIsAuth';
 ?>
 
 <!DOCTYPE html>
