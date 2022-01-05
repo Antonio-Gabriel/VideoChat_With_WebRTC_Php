@@ -49,3 +49,20 @@ Exemplos de aplicações que utilizam o WebRTC
 - Discord
 
 Entre outras.
+
+
+
+## Para startar o projecto
+
+Primeiro inicie o servidor
+
+```bash
+php bin/server.php
+```
+
+A conexão estará activa
+
+
+## Links
+
+[Socket IO](http://socketo.me/docs/hello-world)
