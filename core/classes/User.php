@@ -31,4 +31,16 @@ class User
 
     return false;
   }
+
+  public function getUsers($user_id_actived)
+  {
+    $usersArray = $this->conn->select(
+      "SELECT * FROM users WHERE id != :id",
+      [
+        "id" => $user_id_actived
+      ]
+    );
+
+    return $usersArray;
+  }
 }

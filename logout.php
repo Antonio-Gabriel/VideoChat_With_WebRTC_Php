@@ -1,12 +1,13 @@
 <?php
 
-session_start();
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
 
-$_SESSION = [];
+require_once "./config.php";
+
+session_start();
 
 session_destroy();
 session_unset();
-
-session_regenerate_id();
 
 redirect("index.php");

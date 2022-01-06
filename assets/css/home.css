@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --body-color: #ffffff;
+  --text-color: #1c1c1c;
+  --primary-color: #4d47c3;
+  --second-color: #f0efff;
+  --gray-600: #b0b0b0;
+  --shadow: 0px 4px 61px rgba(77, 71, 195, 0.4);
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+
+  background: var(--body-color);
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+a,
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 1rem 0 4rem 0;
+
+  background: var(--primary-color);
+
+  /* position: fixed;
+
+  width: 100%; */
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header .container .logo {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: var(--body-color);
+}
+
+header .container .menu {
+  display: flex;
+  align-items: center;
+
+  margin-left: 2.5rem;
+}
+
+header .container .menu li + li {
+  margin-left: 1.5rem;
+}
+
+header .container .menu li a {
+  font-weight: 600;
+
+  color: var(--body-color);
+  filter: brightness(0.9);
+
+  transition: filter 0.2s;
+}
+
+header .container .menu li a:hover {
+  filter: brightness(0.7);
+}
+
+header .container .profile {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+}
+
+header .container .profile img {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  filter: opacity(0.8);
+  object-fit: cover;
+}
+
+header .container .profile .me {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 0.6rem;
+}
+
+header .container .profile .me span:first-child {
+  font-weight: 600;
+
+  color: var(--second-color);
+}
+
+header .container .profile .me span:last-child {
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  color: greenyellow;
+}
+
+main .content {
+  margin-top: -3rem;
+  padding: 1rem;
+
+  background-color: var(--body-color);
+  border-radius: 6px;
+
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  gap: 10px;
+
+  height: calc(100vh - 5.5rem);
+
+  box-shadow: 0 15px 38px rgba(83, 83, 83, 0.171);
+}
+
+/* Conections */
+main .content .conections h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  margin-bottom: 1.2rem;
+}
+
+main .content .conections .search {
+  display: flex;
+  align-items: center;
+
+  background: var(--second-color);
+  border-radius: 4px;
+
+  margin-bottom: 2rem;
+}
+
+main .content .conections .search svg {
+  fill: var(--text-color);
+
+  height: 20px;
+  margin-left: 6px;
+}
+
+main .content .conections .search input {
+  width: 220px;
+  height: 40px;
+
+  margin-left: auto;
+
+  outline: none;
+  border: none;
+  background: inherit;
+
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  font-size: 0.8rem;
+  padding-left: 0.4rem;
+}
+
+.users {
+  margin-top: 1rem;
+}
+
+.users li {
+  cursor: pointer;
+
+  padding: 0.5rem;
+
+  border-radius: 4px;
+
+  transition: background 0.2s;
+}
+
+.users li + li {
+  margin-top: 8px;
+}
+
+.users li:hover {
+  background: #f0efff;
+}
+
+.users li a {
+  display: flex;
+  align-items: center;
+}
+
+.users li a img {
+  width: 40px;
+  height: 40px;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.users li a .text {
+
+  margin-left: .6rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.users li a .text strong {
+  font-weight: 600 !important;
+}
+
+.users li a .text span {
+  font-size: 12px;
+  font-weight: 700;
+  color: greenyellow;
+}
+
+/* End Conections */
+
+/*Stream*/
+
+main .content .stream {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-left: 1px solid rgba(192, 192, 192, 0.24);
+  border-right: 1px solid rgba(192, 192, 192, 0.24);
+}
+
+main .content .stream svg {
+  width: 300px;
+  height: 300px;
+
+  fill: rgba(192, 192, 192, 0.473) !important;
+  opacity: 0.7;
+
+  margin-bottom: 2rem;
+}
+
+main .content .stream h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+
+  margin-bottom: 0.1rem;
+}
+
+/*End Stream*/
+
+/*chat*/
+main .content .chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main .content .chat svg {
+  height: 100px;
+
+  stroke: var(--primary-color);
+
+  margin-bottom: 0.5rem;
+}
+
+main .content .chat h2 {
+  font-weight: 600;
+}
+
+main .content .chat p {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+/*End chat*/

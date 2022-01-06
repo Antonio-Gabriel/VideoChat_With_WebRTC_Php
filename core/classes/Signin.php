@@ -24,7 +24,8 @@ if ($response) {
     $_SESSION["user"] = [
       "user_id" => $response[0]["id"],
       "username" => $response[0]["username"],
-      "name" => $response[0]["name"]
+      "name" => $response[0]["name"],
+      "photo" => $response[0]["profile_image"]
     ];
 
     redirect("home.php");
