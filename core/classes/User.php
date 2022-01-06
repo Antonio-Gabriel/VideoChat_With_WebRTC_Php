@@ -46,6 +46,18 @@ class User
     return $usersArray;
   }
 
+  public function getUser($user_id_actived)
+  {
+    $usersArray = $this->conn->select(
+      "SELECT * FROM users WHERE id = :id",
+      [
+        ":id" => $user_id_actived
+      ]
+    );
+
+    return $usersArray;
+  }
+
   public function getUserByUsername($username)
   {
     $userArray = $this->conn->select(
