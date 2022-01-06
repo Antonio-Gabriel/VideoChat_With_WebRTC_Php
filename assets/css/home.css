@@ -349,6 +349,41 @@ main .content .stream .call .circle img {
   border-radius: 50%;
 }
 
+main .content .stream .call.hidden {
+  display: none;
+}
+
+main .content .stream .video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  position: relative;
+}
+
+main .content .stream .video.hidden {
+  display: none;
+}
+
+main .content .stream .video #localVideo {
+  width: 100%;
+  height: 100%;
+
+  background-color: red;
+}
+
+main .content .stream .video #remoteVideo {
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+  z-index: 99;
+
+  right: 0;
+  bottom: 0;
+
+  border-top-left-radius: 8px;
+}
 /*End Stream*/
 
 /*chat*/
@@ -376,3 +411,95 @@ main .content .chat p {
   color: var(--primary-color);
 }
 /*End chat*/
+
+/* Popup */
+.popup {
+  background-color: #ffffff;
+  width: 450px;
+  padding: 30px 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  text-align: center;
+
+  box-shadow: 0 15px 38px rgba(83, 83, 83, 0.171);
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup .content .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.popup .content .user-info img {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+}
+
+.popup .content .user-info .info {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  margin-left: 1rem;
+}
+
+.popup .content .user-info .info span {
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 0.8rem;
+}
+
+.popup .content .user-info .info span svg {
+  width: 20px;
+  height: 20px;
+
+  margin-left: 0.2rem;
+
+  fill: #1bbb31;
+  stroke: #1bbb31;
+}
+
+.popup .content .call {
+  display: flex;
+}
+
+.popup .content .call svg {
+  cursor: pointer;
+}
+
+.popup .content .call svg:first-child {
+  fill: #bd0e2b;
+  stroke: #bd0e2b;
+}
+
+.popup .content .call svg:last-child {
+  fill: #1bbb31;
+  stroke: #1bbb31;
+}
+
+.popup .content .call svg + svg {
+  margin-left: 0.8rem;
+}
+
+.popup svg {
+  height: 30px;
+}
