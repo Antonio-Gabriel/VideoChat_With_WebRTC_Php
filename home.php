@@ -12,7 +12,7 @@ $user = new User();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-pt">
 
 <head>
   <meta charset="UTF-8">
@@ -29,7 +29,7 @@ $user = new User();
       <a href="#" class="logo">VCHAT</a>
 
       <ul class="menu">
-        <li><a href="#">Início</a></li>
+        <li><a href="home.php">Início</a></li>
         <li><a href="#">Perfil</a></li>
         <li><a href="logout.php">Terminar sessão</a></li>
       </ul>
@@ -69,7 +69,7 @@ $user = new User();
               ?>
 
                 <li>
-                  <a href="#">
+                  <a href="<?= $data->username ?>">
                     <img src="./assets/images/<?= $data->profile_image ?>" alt="<?= $data->username ?>">
 
                     <div class="text">

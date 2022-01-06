@@ -226,8 +226,7 @@ main .content .conections .search input {
 }
 
 .users li a .text {
-
-  margin-left: .6rem;
+  margin-left: 0.6rem;
 
   display: flex;
   flex-direction: column;
@@ -254,8 +253,16 @@ main .content .stream {
   align-items: center;
   justify-content: center;
 
-  border-left: 1px solid rgba(192, 192, 192, 0.24);
-  border-right: 1px solid rgba(192, 192, 192, 0.24);
+  /* border-left: 1px solid rgba(192, 192, 192, 0.24);
+  border-right: 1px solid rgba(192, 192, 192, 0.24); */
+}
+
+main .content .stream .call {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
 }
 
 main .content .stream svg {
@@ -273,6 +280,73 @@ main .content .stream h2 {
   font-size: 1.4rem;
 
   margin-bottom: 0.1rem;
+}
+
+main .content .stream .call .circle {
+  padding: 0.7rem !important;
+  background-color: var(--primary-color) !important;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1.5rem;
+}
+
+main .content .stream .call .connect-name {
+  font-size: 1.8rem;
+
+  margin-bottom: -0.3rem;
+}
+
+main .content .stream .call .connect-email {
+  font-weight: 600;
+  font-size: 1rem !important;
+
+  color: var(--primary-color);
+}
+
+main .content .stream .call .connect-username {
+  font-weight: 600;
+  font-size: 1rem !important;
+
+  color: var(--gray-600);
+}
+
+main .content .stream .call .btn-call {
+  width: 60px;
+  height: 60px;
+  background: #1bbb31;
+
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 50%;
+
+  margin-top: 2rem;
+  transition: filter 0.2s;
+}
+
+main .content .stream .call .btn-call:hover {
+  filter: brightness(0.8);
+}
+
+main .content .stream .call .btn-call svg {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0;
+
+  color: var(--body-color);
+}
+
+main .content .stream .call .circle img {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
 }
 
 /*End Stream*/

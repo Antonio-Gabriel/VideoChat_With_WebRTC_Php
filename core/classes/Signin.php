@@ -17,6 +17,7 @@ if ($response) {
   $permition = Password::comparePassword($_POST["password"], $response[0]["password"]);
 
   if ($permition) {
+    session_start();
     session_regenerate_id();
 
     // Session

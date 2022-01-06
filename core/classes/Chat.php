@@ -1,46 +1,71 @@
 <?php
+
 namespace VChat\classes;
 
-use Ratchet\MessageComponentInterface;
+use VChat\classes\User;
 use Ratchet\ConnectionInterface;
+use Ratchet\MessageComponentInterface;
 
-class Chat implements MessageComponentInterface {
-    protected $clients;
+class Chat implements MessageComponentInterface
+{
+  protected $clients;
+  public $user, $data;
 
-    public function __construct() {
-        $this->clients = new \SplObjectStorage;
+  public function __construct()
+  {
+    $this->clients = new \SplObjectStorage;
+    $this->user = new User();
+  }
+
+  public function onOpen(ConnectionInterface $conn)
+  {
+    // Store the new connection to send messages to later
+    $queryString = $conn->httpRequest->getUri()->getQuery();
+    parse_str($queryString, $query);
+
+    if ($data = (object)$this->user->getUserBySession($query["token"])[0]) {
+
+      $this->data = $data;
+      $conn->data = $data;
+
+      $this->clients->attach($conn);
+      $this->user->updateConnection($this->data->id, $conn->resourceId);
+
+      echo "New connection! ({$this->data->username})\n";
     }
+  }
 
-    public function onOpen(ConnectionInterface $conn) {
-        // Store the new connection to send messages to later
-        $this->clients->attach($conn);
+  public function onMessage(ConnectionInterface $from, $msg)
+  {
+    $numRecv = count($this->clients) - 1;
+    echo sprintf(
+      'Connection %d sending message "%s" to %d other connection%s' . "\n",
+      $from->resourceId,
+      $msg,
+      $numRecv,
+      $numRecv == 1 ? '' : 's'
+    );
 
-        echo "New connection! ({$conn->resourceId})\n";
+    foreach ($this->clients as $client) {
+      if ($from !== $client) {
+        // The sender is not the receiver, send to each client connected
+        $client->send($msg);
+      }
     }
+  }
 
-    public function onMessage(ConnectionInterface $from, $msg) {
-        $numRecv = count($this->clients) - 1;
-        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
-            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
+  public function onClose(ConnectionInterface $conn)
+  {
+    // The connection is closed, remove it, as we can no longer send it messages
+    $this->clients->detach($conn);
 
-        foreach ($this->clients as $client) {
-            if ($from !== $client) {
-                // The sender is not the receiver, send to each client connected
-                $client->send($msg);
-            }
-        }
-    }
+    echo "Connection {$conn->resourceId} has disconnected\n";
+  }
 
-    public function onClose(ConnectionInterface $conn) {
-        // The connection is closed, remove it, as we can no longer send it messages
-        $this->clients->detach($conn);
+  public function onError(ConnectionInterface $conn, \Exception $e)
+  {
+    echo "An error has occurred: {$e->getMessage()}\n";
 
-        echo "Connection {$conn->resourceId} has disconnected\n";
-    }
-
-    public function onError(ConnectionInterface $conn, \Exception $e) {
-        echo "An error has occurred: {$e->getMessage()}\n";
-
-        $conn->close();
-    }
+    $conn->close();
+  }
 }

@@ -22,7 +22,7 @@ $_ = (Middleware::isAuthenticated()) ? redirect("home.php") : 'NotIsAuth';
 <body>
   <header>
     <div class="container">
-      <a href="#" class="logo">VCHAT</a>
+      <a href="index.php" class="logo">VCHAT</a>
     </div>
   </header>
 
@@ -80,14 +80,3 @@ $_ = (Middleware::isAuthenticated()) ? redirect("home.php") : 'NotIsAuth';
 </body>
 
 </html>
-
-<!-- <script>
-    var conn = new WebSocket('ws://localhost:8090');
-    conn.onopen = function(e) {
-        console.log("Connection established!");
-    };
-
-    conn.onmessage = function(e) {
-        console.log(e.data);
-    };
-</script> -->
